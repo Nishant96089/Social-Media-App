@@ -1,0 +1,16 @@
+/* Sidebar.module.css */
+
+.sidebar {
+  width: 20vw;
+  height: 96.5vh;
+  margin: 10px 10px 0px 10px;
+  border-radius: 15px;
+}
+
+.sidebar * {
+  background-color: inherit;
+}
+
+.sideBtns:hover {
+  background-color: rgb(133, 197, 197);
+}
