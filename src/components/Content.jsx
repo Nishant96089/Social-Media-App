@@ -1,4 +1,5 @@
 import Postcard from "./Postcard";
+import Createpost from "./Createpost";
 import { PostList } from "../store/PostList";
 import { useContext } from "react";
 
@@ -15,7 +16,9 @@ const Content = ({ selectedTab }) => {
           </>
         )}
         {selectedTab === "Create Post" && (
-          <div className="createPost">Create Post</div>
+          <div className="createPost">
+            <Createpost />
+          </div>
         )}
       </div>
 
