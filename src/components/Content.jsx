@@ -1,20 +1,20 @@
 import Postcard from "./Postcard";
+import { PostList } from "../store/PostList";
+import { useContext } from "react";
 
 const Content = ({ selectedTab }) => {
+  const { postlist } = useContext(PostList);
   return (
     <div className="content">
       <div className="post">
-        {selectedTab === "Home" ? (
+        {selectedTab === "Home" && (
           <>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
-            <Postcard></Postcard>
+            {postlist.map((post) => (
+              <Postcard key={post.id} post={post} />
+            ))}
           </>
-        ) : (
+        )}
+        {selectedTab === "Create Post" && (
           <div className="createPost">Create Post</div>
         )}
       </div>

@@ -7,7 +7,7 @@ import { IoBookmarks } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
 import { IoCreate } from "react-icons/io5";
 
-const Sidebar = ({ selectedTab, setSelectedtab }) => {
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   const sideBtns = [
     {
       icon: FaHome,
@@ -62,7 +62,7 @@ const Sidebar = ({ selectedTab, setSelectedtab }) => {
             className={`nav-item`}
             key={item.name}
             onClick={() => {
-              setSelectedtab(item.name);
+              setSelectedTab(item.name);
             }}
           >
             <a

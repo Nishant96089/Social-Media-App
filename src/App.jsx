@@ -2,18 +2,19 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Content from "./components/Content";
+import PostlistProvider from "./store/PostList";
 import { useState } from "react";
 
 function App() {
-  const [selectedTab, setSelectedtab] = useState();
+  const [selectedTab, setSelectedTab] = useState("Home");
   return (
-    <>
-      <Sidebar selectedTab={selectedTab} setSelectedtab={setSelectedtab} />
+    <PostlistProvider>
+      <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       <div className="content-container">
-        <Header setSelectedtab={selectedTab} />
+        <Header setSelectedTab={setSelectedTab} selectedTab={selectedTab} />
         <Content selectedTab={selectedTab} />
       </div>
-    </>
+    </PostlistProvider>
   );
 }
 

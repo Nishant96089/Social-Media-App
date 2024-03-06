@@ -4,7 +4,7 @@ import { IoChatboxEllipses } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 
-const Header = ({ setSelectedtab }) => {
+const Header = ({ setSelectedTab }) => {
   // const headBtns = [IoMdNotifications, IoChatboxEllipses, FaUserFriends];
   return (
     <div className="header shadow p-3 bg-body-tertiary rounded">
@@ -24,7 +24,12 @@ const Header = ({ setSelectedtab }) => {
 
           <ul className="d-flex flex-row justify-content-around mt-4 ulItem">
             <li>
-              <a href="/">
+              <a
+                href="/"
+                onClick={() => {
+                  setSelectedTab("Home");
+                }}
+              >
                 <FaHome />
               </a>
             </li>
