@@ -4,7 +4,7 @@ import { BsFillShareFill } from "react-icons/bs";
 const Postcard = ({ post }) => {
   return (
     <div
-      className="post-card card shadow p-3 bg-body-tertiary rounded mb-2"
+      className="post-card card shadow bg-body-tertiary rounded mb-4"
       style={{ width: "80%" }}
     >
       <img src={post.image} className="card-img-top" alt="..." />

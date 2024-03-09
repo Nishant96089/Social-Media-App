@@ -16,7 +16,7 @@ const Content = ({ selectedTab }) => {
           </>
         )}
         {selectedTab === "Create Post" && (
-          <div className="createPost">
+          <div className="createPost shadow bg-body-tertiary rounded p-4">
             <Createpost />
           </div>
         )}
