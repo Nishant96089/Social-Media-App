@@ -1,3 +1,5 @@
+import { FaShareFromSquare } from "react-icons/fa6";
+
 const Createpost = () => {
   return (
     <form className="create-post-form">
@@ -20,8 +22,15 @@ const Createpost = () => {
         <textarea
           className="input-tag"
           id="input-tag"
-          placeholder="Enter your tags here."
+          placeholder="Enter tags here with a space"
         ></textarea>
+      </div>
+
+      <div className="add-media">
+        <input type="file" />
+        <button className="post-btn">
+          <FaShareFromSquare className="share-icon"/>
+        </button>
       </div>
     </form>
   );
