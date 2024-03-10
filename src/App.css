@@ -169,6 +169,12 @@
   border-radius: 3px;
 }
 
+.add-media {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
 .post-btn {
   color: white;
   background-color: rgb(57, 160, 160);
@@ -178,8 +184,27 @@
   border-radius: 5px;
 }
 
-.share-icon {
-  width: 50px;
-  height: 20px;
-  margin: auto;
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-input {
+  color: white;
+  background-color: rgb(57, 160, 160);
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 40px;
+  padding: 5px 18px;
+}
+
+.file-name {
+  color: grey;
+}
+
+.media-img {
+  font-size: 24px;
+  margin: none;
 }

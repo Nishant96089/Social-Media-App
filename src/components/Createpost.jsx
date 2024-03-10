@@ -1,4 +1,5 @@
 import { FaShareFromSquare } from "react-icons/fa6";
+import { MdOutlinePermMedia } from "react-icons/md";
 
 const Createpost = () => {
   return (
@@ -27,9 +28,13 @@ const Createpost = () => {
       </div>
 
       <div className="add-media">
-        <input type="file" />
+        <label htmlFor="file-upload" className="custom-file-input">
+          <MdOutlinePermMedia className="media-img"/>
+        </label>
+        <input id="file-upload" type="file" />
+        {/* <input type="file" /> */}
         <button className="post-btn">
-          <FaShareFromSquare className="share-icon"/>
+          Share <FaShareFromSquare className="share-icon" />
         </button>
       </div>
     </form>
