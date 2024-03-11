@@ -29,7 +29,7 @@ const Postcard = ({ post }) => {
           className="rounded-circle me-4 user-dp"
         />
         {post.tags.map((item) => (
-          <span class="badge shadow p-3 bg-body-tertiary rounded tags">
+          <span className="badge shadow p-3 bg-body-tertiary rounded tags">
             #{item}
           </span>
         ))}

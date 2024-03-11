@@ -7,7 +7,11 @@ export const PostList = createContext({
 });
 
 const postlistReducer = (currList, action) => {
-  return currList;
+  let newPostList = currList;
+  if (action.type === "ADD_POST") {
+    newPostList = [action.payload, ...currList];
+  }
+  return newPostList;
 };
 
 const PostlistProvider = ({ children }) => {
@@ -16,7 +20,18 @@ const PostlistProvider = ({ children }) => {
     DEFAULT_POST_LIST
   );
 
-  const addPost = () => {};
+  const addPost = (postBody, tags, img) => {
+    dispatchpostList({
+      type: "ADD_POST",
+      payload: {
+        id: Date.now(),
+        body: postBody,
+        userId: "nishant.dev",
+        tags: tags,
+        image: img,
+      },
+    });
+  };
   const deletePost = () => {};
 
   return (
@@ -29,9 +44,7 @@ const PostlistProvider = ({ children }) => {
 const DEFAULT_POST_LIST = [
   {
     id: "1",
-    title: "The Power of Contributing on GitHub",
     body: "GitHub contributions are a networking goldmine. Engaging with like-minded developers, participating in discussions, and sharing insights within the community can lead to valuable connections, mentorship opportunities, and even job offers.",
-    reactions: "6",
     userId: "user-1",
     tags: ["github", "contributing", "networking"],
     image:
@@ -39,9 +52,7 @@ const DEFAULT_POST_LIST = [
   },
   {
     id: "2",
-    title: "2024 Web Design Trends",
     body: "In this dynamic era of web design, these trends are not just about aesthetics; they are about crafting experiences that resonate with users, making the digital journey both visually stunning and functionally seamless. As we ride the waves of innovation, these trends are shaping the web into a more engaging and user-centric space.",
-    reactions: "10",
     userId: "user-2",
     tags: ["design", "UI/UX", "front-end"],
     image:
