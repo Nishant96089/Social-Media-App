@@ -1,0 +1,29 @@
+@media (max-width: 480px) {
+  /* Hide text and reduce logo size */
+  .appName {
+    display: none;
+  }
+  .logo-mobile {
+    width: 30px;
+    height: 30px;
+  }
+  /* Adjust spacing and alignment */
+  .p-3 {
+    padding: 0.5rem;
+  }
+  .me-4 {
+    margin-right: 0.5rem !important;
+  }
+
+  .suggestions {
+    display: none;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .post-card {
+    width: 100%;
+  }
+}

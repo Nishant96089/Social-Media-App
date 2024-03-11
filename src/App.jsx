@@ -1,4 +1,5 @@
 import "./App.css";
+import "./MobileApp.css";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Content from "./components/Content";
