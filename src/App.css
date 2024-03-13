@@ -217,3 +217,8 @@ input[type="file"] {
 .selected-image {
   max-height: 420px;
 }
+
+.getPosts {
+  color: rgb(57, 160, 160) !important;
+  font-weight: 600 !important;
+}

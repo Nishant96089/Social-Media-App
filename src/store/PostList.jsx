@@ -3,13 +3,15 @@ import { createContext, useReducer } from "react";
 export const PostList = createContext({
   postlist: [],
   addPost: () => {},
-  deletePost: () => {},
+  addMorePosts: () => {},
 });
 
 const postlistReducer = (currList, action) => {
   let newPostList = currList;
   if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currList];
+  } else if (action.type === "ADD_MORE_POSTS") {
+    newPostList = [...currList, ...action.payload.posts];
   }
   return newPostList;
 };
@@ -32,10 +34,17 @@ const PostlistProvider = ({ children }) => {
       },
     });
   };
-  const deletePost = () => {};
+  const addMorePosts = (posts) => {
+    dispatchpostList({
+      type: "ADD_MORE_POSTS",
+      payload: {
+        posts,
+      },
+    });
+  };
 
   return (
-    <PostList.Provider value={{ postlist, addPost, deletePost }}>
+    <PostList.Provider value={{ postlist, addPost, addMorePosts }}>
       {children}
     </PostList.Provider>
   );
