@@ -112,6 +112,7 @@
   margin-top: 15px;
   margin-right: 15px;
   color: grey;
+  cursor: pointer;
 }
 
 .user-dp {
@@ -240,4 +241,11 @@ input[type="file"] {
 }
 .comment-button:hover {
   background-color: rgb(57, 160, 160) !important;
+}
+
+.share-popup {
+  position: relative;
+  left: 9rem;
+  top: -2rem;
+  margin: none;
 }

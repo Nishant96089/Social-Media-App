@@ -7,6 +7,7 @@ const Postcard = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
+  const [showSharePopup, setShowSharePopup] = useState(false);
 
   const toggleComments = () => {
     setShowComments(!showComments);
@@ -21,6 +22,10 @@ const Postcard = ({ post }) => {
       setComments([...comments, newComment]);
       setNewComment("");
     }
+  };
+
+  const toggleSharePopup = () => {
+    setShowSharePopup(!showSharePopup);
   };
 
   return (
@@ -41,8 +46,20 @@ const Postcard = ({ post }) => {
           className="comment-btn"
           onClick={toggleComments}
           style={{ cursor: "pointer" }}
+          aria-label="Toggle comments"
         />
-        <BsFillShareFill className="share-btn"></BsFillShareFill>
+        <BsFillShareFill
+          className="share-btn"
+          onClick={toggleSharePopup}
+          aria-label="Share post"
+        />
+        {showSharePopup && (
+          <div className="share-popup">
+            <button className="share-option">Option 1</button>
+            <button className="share-option">Option 2</button>
+            <button className="share-option">Option 3</button>
+          </div>
+        )}
       </div>
       <div className="card-body">
         <p className="card-text">{post.body}</p>
@@ -53,8 +70,8 @@ const Postcard = ({ post }) => {
           height="32"
           className="rounded-circle me-4 user-dp"
         />
-        {post.tags.map((item) => (
-          <span className="badge shadow p-3 bg-body-tertiary rounded tags">
+        {post.tags.map((item, index) => (
+          <span key={index} className="badge shadow p-3 bg-body-tertiary rounded tags">
             #{item}
           </span>
         ))}
@@ -68,11 +85,18 @@ const Postcard = ({ post }) => {
                 placeholder="Add a comment..."
                 value={newComment}
                 onChange={handleInputChange}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    handleAddComment();
+                  }
+                }}
+                aria-label="Add a comment"
               />
               <button
                 className="btn btn-outline-primary comment-button"
                 type="button"
                 onClick={handleAddComment}
+                aria-label="Add comment"
               >
                 <FaArrowRight className="add-comment" />
               </button>
