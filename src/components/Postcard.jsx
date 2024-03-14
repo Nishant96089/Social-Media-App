@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FcComments } from "react-icons/fc";
 import { BsFillShareFill } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Postcard = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
@@ -54,10 +55,17 @@ const Postcard = ({ post }) => {
           aria-label="Share post"
         />
         {showSharePopup && (
-          <div className="share-popup">
-            <button className="share-option">Option 1</button>
-            <button className="share-option">Option 2</button>
-            <button className="share-option">Option 3</button>
+          <div className="social-buttons">
+            <a
+              href="http://www.facebook.com"
+              target="_blank"
+              className="social-margin"
+            >
+              <div className="social-icon facebook">
+                <FaFacebook />
+              </div>
+            </a>
+            {/* Add other social buttons here */}
           </div>
         )}
       </div>
@@ -71,7 +79,10 @@ const Postcard = ({ post }) => {
           className="rounded-circle me-4 user-dp"
         />
         {post.tags.map((item, index) => (
-          <span key={index} className="badge shadow p-3 bg-body-tertiary rounded tags">
+          <span
+            key={index}
+            className="badge shadow p-3 bg-body-tertiary rounded tags"
+          >
             #{item}
           </span>
         ))}
@@ -86,7 +97,7 @@ const Postcard = ({ post }) => {
                 value={newComment}
                 onChange={handleInputChange}
                 onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
+                  if (e.key === "Enter") {
                     handleAddComment();
                   }
                 }}
