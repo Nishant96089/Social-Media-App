@@ -1,7 +1,28 @@
+import React, { useState } from "react";
 import { FcComments } from "react-icons/fc";
 import { BsFillShareFill } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
 
 const Postcard = ({ post }) => {
+  const [showComments, setShowComments] = useState(false);
+  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]);
+
+  const toggleComments = () => {
+    setShowComments(!showComments);
+  };
+
+  const handleInputChange = (e) => {
+    setNewComment(e.target.value);
+  };
+
+  const handleAddComment = () => {
+    if (newComment.trim() !== "") {
+      setComments([...comments, newComment]);
+      setNewComment("");
+    }
+  };
+
   return (
     <div
       className="post-card card shadow bg-body-tertiary rounded mb-4"
@@ -16,7 +37,11 @@ const Postcard = ({ post }) => {
           alt="like--v3"
           className="like-btn"
         />
-        <FcComments className="comment-btn" />
+        <FcComments
+          className="comment-btn"
+          onClick={toggleComments}
+          style={{ cursor: "pointer" }}
+        />
         <BsFillShareFill className="share-btn"></BsFillShareFill>
       </div>
       <div className="card-body">
@@ -33,6 +58,34 @@ const Postcard = ({ post }) => {
             #{item}
           </span>
         ))}
+
+        {showComments && (
+          <div className="card-footer bg-body-tertiary p-0">
+            <div className="input-group mb-3 comment-input">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add a comment..."
+                value={newComment}
+                onChange={handleInputChange}
+              />
+              <button
+                className="btn btn-outline-primary comment-button"
+                type="button"
+                onClick={handleAddComment}
+              >
+                <FaArrowRight className="add-comment" />
+              </button>
+            </div>
+            <ul className="list-group">
+              {comments.map((comment, index) => (
+                <li key={index} className="list-group-item">
+                  {comment}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

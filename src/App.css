@@ -83,7 +83,6 @@
   width: 28%;
   height: 100%;
 }
-
 .post-card * {
   background-color: inherit;
 }
@@ -210,10 +209,6 @@ input[type="file"] {
   margin: none;
 }
 
-.card-img-top {
-  max-height: 564.275px !important;
-}
-
 .selected-image {
   max-height: 420px;
 }
@@ -221,4 +216,28 @@ input[type="file"] {
 .getPosts {
   color: rgb(57, 160, 160) !important;
   font-weight: 600 !important;
+}
+
+.card-img-top {
+  max-height: 300px;
+}
+
+.card-footer {
+  background-color: inherit;
+  margin-top: 15px;
+  border: none !important;
+}
+.card-footer * {
+  background-color: inherit;
+}
+
+.add-comment {
+  margin-bottom: 4px;
+}
+
+.comment-input {
+  width: 100% !important;
+}
+.comment-button:hover {
+  background-color: rgb(57, 160, 160) !important;
 }
