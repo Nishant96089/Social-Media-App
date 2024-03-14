@@ -30,8 +30,8 @@ const Postcard = ({ post }) => {
 
   return (
     <div
-      className="post-card card shadow bg-body-tertiary rounded mb-4"
-      style={{ width: "80%" }}
+      className="post-card card shadow bg-body-tertiary rounded mb-4 p-3"
+      style={{ width: "95%" }}
     >
       <img src={post.image} className="card-img-top" alt="..." />
       <div className="position-relative">

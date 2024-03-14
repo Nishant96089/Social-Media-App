@@ -220,7 +220,7 @@ input[type="file"] {
 }
 
 .card-img-top {
-  max-height: 300px;
+  max-height: 450px;
 }
 
 .card-footer {
@@ -248,4 +248,38 @@ input[type="file"] {
   left: 9rem;
   top: -2rem;
   margin: none;
+}
+
+.suggest {
+  width: 100%;
+  height: 38%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.online {
+  width: 100%;
+  height: 58%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.suggest-for-u {
+  font-family: sans-serif;
+  color: grey;
+}
+
+.follow {
+  margin-left: 100px;
+  margin-top: 22px;
+  border-radius: 3px;
+  padding: 2px 10px;
+  color: white;
+  background-color: rgb(57, 160, 160) !important;
+  font-size: 15px;
+  border: none;
+}
+
+.suggest * {
+  background-color: inherit;
 }

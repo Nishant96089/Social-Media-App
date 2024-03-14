@@ -22,7 +22,12 @@ const Content = ({ selectedTab }) => {
             {postlist.map((post) => (
               <Postcard key={post.id} post={post} />
             ))}
-            <div onClick={getPosts} className="btn shadow bg-body-tertiary rounded mb-2 getPosts">More Posts</div>
+            <div
+              onClick={getPosts}
+              className="btn shadow bg-body-tertiary rounded mb-2 getPosts"
+            >
+              More Posts
+            </div>
           </>
         )}
         {selectedTab === "Create Post" && (
@@ -32,7 +37,50 @@ const Content = ({ selectedTab }) => {
         )}
       </div>
 
-      <div className="suggestions shadow p-3 bg-body-tertiary rounded"></div>
+      <div className="suggestions">
+        <div className="suggest shadow bg-body-tertiary rounded p-3">
+          <h5 className="suggest-for-u">Suggestion For You</h5>
+          <div className="suggestion-list">
+            <div class="sugg-people d-flex flex-row">
+              <div class="s-left">
+                <img
+                  src="/Social-Media-App-Frontend/static/media/img-1.1c6d468b21e2e7823da2.jpg"
+                  alt=""
+                />
+                <h6>Elon Musk</h6>
+              </div>
+              <div class="s-right">
+                <button className="follow">Follow</button>
+              </div>
+            </div>
+            <div class="sugg-people d-flex flex-row">
+              <div class="s-left">
+                <img
+                  src="/Social-Media-App-Frontend/static/media/img-1.1c6d468b21e2e7823da2.jpg"
+                  alt=""
+                />
+                <h6>Jeff Bezos</h6>
+              </div>
+              <div class="s-right">
+                <button className="follow">Follow</button>
+              </div>
+            </div>
+            <div class="sugg-people d-flex flex-row">
+              <div class="s-left">
+                <img
+                  src="/Social-Media-App-Frontend/static/media/img-1.1c6d468b21e2e7823da2.jpg"
+                  alt=""
+                />
+                <h6>Mukesh Ambani</h6>
+              </div>
+              <div class="s-right">
+                <button className="follow">Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="online shadow bg-body-tertiary rounded"></div>
+      </div>
     </div>
   );
 };
