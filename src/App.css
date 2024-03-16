@@ -318,4 +318,21 @@ input[type="file"] {
   padding: 3px;
   z-index: 300;
   background-color: #fff;
+  height: auto;
+  width: auto;
+  border: 1px dashed rgb(57, 160, 160);
+}
+
+.social-icon {
+  font-size: 25px;
+}
+
+.instagram {
+  color: #c05c95;
+}
+.twitter {
+  color: black;
+}
+.facebook {
+  margin-left: 4px;
 }

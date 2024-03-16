@@ -3,6 +3,9 @@ import { FcComments } from "react-icons/fc";
 import { BsFillShareFill } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { BsTwitterX } from "react-icons/bs";
 
 const Postcard = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
@@ -55,17 +58,43 @@ const Postcard = ({ post }) => {
           aria-label="Share post"
         />
         {showSharePopup && (
-          <div className="social-buttons">
+          <div className="social-buttons p-2 d-flex flex-row justify-evenly">
             <a
               href="http://www.facebook.com"
               target="_blank"
-              className="social-margin"
+              className="social-margin me-4"
             >
               <div className="social-icon facebook">
                 <FaFacebook />
               </div>
             </a>
-            {/* Add other social buttons here */}
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              className="social-margin me-4"
+            >
+              <div className="social-icon instagram">
+                <FaInstagramSquare />
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              className="social-margin me-4"
+            >
+              <div className="social-icon linkedin">
+                <IoLogoLinkedin />
+              </div>
+            </a>
+            <a
+              href="https://twitter.com/?lang=en"
+              target="_blank"
+              className="social-margin me-2"
+            >
+              <div className="social-icon twitter">
+                <BsTwitterX />
+              </div>
+            </a>
           </div>
         )}
       </div>
