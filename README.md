@@ -29,4 +29,4 @@ This is a social media application built with React that features a responsive d
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-![App Preview]()
+![App Preview](social-homepage.png)
