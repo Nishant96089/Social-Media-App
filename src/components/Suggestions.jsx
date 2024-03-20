@@ -21,18 +21,18 @@ const Suggestions = () => {
       <h5 className="suggest-for-u">Suggestions For You</h5>
       <div className="suggestion-list">
         {suggestedUsers.map((item) => (
-          <div class="sugg-people d-flex flex-row justify-content-between mt-3">
-            <div class="s-left d-flex flex-row">
+          <div className="sugg-people d-flex flex-row justify-content-between mt-3">
+            <div className="s-left d-flex flex-row">
               <img
                 src={item.image}
                 alt=""
                 width="40"
                 height="40"
-                class="rounded-circle me-2"
+                className="rounded-circle me-2"
               />
               <h6 className="mt-2">{item.name}</h6>
             </div>
-            <div class="s-right">
+            <div className="s-right">
               <button className="follow">Follow</button>
             </div>
           </div>
