@@ -1,8 +1,32 @@
-# React + Vite
+# Social Media Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a social media application built with React that features a responsive design and several key components for a dynamic user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Sidebar**: Allows easy navigation with icons for different sections.
+- **Header**: Includes a search bar and icons for notifications, chat, and user friends.
+- **Content Area**: Displays posts fetched from an API, with the ability to create new posts and fetch more posts.
+
+## Technologies Used
+
+- React
+- React Router
+- Context API
+- CSS (including CSS Modules)
+- Fetch API
+- React Icons
+- DummyJSON
+
+## Getting Started
+
+1. Clone the repository: `git clone https://github.com/your-username/social-media-app.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
+4. Open the application in your browser at `http://localhost:3000`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+![App Preview](social-homepage.png)
