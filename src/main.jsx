@@ -7,15 +7,21 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Login from "./RegisterPage/Login.jsx";
+import Signup from "./RegisterPage/Signup.jsx";
 
 const router = createBrowserRouter([
+  { path: "/", element: <Login /> },
+  { path: "/signup", element: <Signup /> },
   {
-    path: "/",
+    path: "/home",
     element: <App />,
-    children: [
-      { path: "/", element: <PostListdata /> },
-      { path: "/create-post", element: <Createpost /> },
-    ],
+    children: [{ path: "/home", element: <PostListdata /> }],
+  },
+  {
+    path: "/create-post",
+    element: <App />,
+    children: [{ path: "/create-post", element: <Createpost /> }],
   },
 ]);
 

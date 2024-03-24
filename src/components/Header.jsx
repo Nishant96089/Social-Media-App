@@ -26,7 +26,7 @@ const Header = ({ setSelectedTab }) => {
           <ul className="d-flex flex-row justify-content-around mt-4 ulItem">
             <li>
               <Link
-                to="/"
+                to="/home"
                 onClick={() => {
                   // setSelectedTab("Home");
                 }}

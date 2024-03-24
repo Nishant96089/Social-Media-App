@@ -37,7 +37,7 @@ const Createpost = () => {
     setSelectedImage(null);
 
     addPost(postBody, tags, img);
-    navigate("/");
+    navigate("/home");
   };
 
   return (

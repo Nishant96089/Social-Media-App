@@ -16,7 +16,7 @@ const Sidebar = ({}) => {
     {
       icon: FaHome,
       name: "Home",
-      path: "/",
+      path: "/home",
     },
     {
       icon: IoCreate,
@@ -135,9 +135,9 @@ const Sidebar = ({}) => {
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="/">
               Sign out
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
