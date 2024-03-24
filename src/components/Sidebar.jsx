@@ -6,36 +6,47 @@ import { LiaListSolid } from "react-icons/lia";
 import { IoBookmarks } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
 import { IoCreate } from "react-icons/io5";
+import { useLocation, Link } from "react-router-dom";
 
-const Sidebar = ({ selectedTab, setSelectedTab }) => {
+const Sidebar = ({}) => {
+  // selectedTab, setSelectedTab
+  const location = useLocation();
+
   const sideBtns = [
     {
       icon: FaHome,
       name: "Home",
+      path: "/",
     },
     {
       icon: IoCreate,
       name: "Create Post",
+      path: "/create-post",
     },
     {
       icon: SiAzuredataexplorer,
       name: "Explore",
+      path: "#",
     },
     {
       icon: HiTrendingUp,
       name: "Trending",
+      path: "#",
     },
     {
       icon: LiaListSolid,
       name: "Lists",
+      path: "#",
     },
     {
       icon: IoBookmarks,
       name: "Saved",
+      path: "#",
     },
     {
       icon: IoSettings,
       name: "Settings",
+      path: "#",
     },
   ];
   return (
@@ -62,14 +73,19 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
             className={`nav-item`}
             key={item.name}
             onClick={() => {
-              setSelectedTab(item.name);
+              // setSelectedTab(item.name);
             }}
           >
-            <a
-              href="#"
-              className={`nav-link ${
-                selectedTab === item.name ? "active" : "link-body-emphasis"
-              } ${styles.sideBtns}`}
+            <Link
+              to={item.path}
+              className={`nav-link  ${styles.sideBtns} ${
+                location.pathname === item.path
+                  ? "active"
+                  : "link-body-emphasis"
+              }`}
+              // ${
+              //   selectedTab === item.name ? "active" : "link-body-emphasis"
+              // }
               aria-current="page"
             >
               <item.icon
@@ -78,7 +94,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
                 height="16"
               />
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

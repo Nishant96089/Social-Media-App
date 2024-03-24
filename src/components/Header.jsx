@@ -3,6 +3,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = ({ setSelectedTab }) => {
   // const headBtns = [IoMdNotifications, IoChatboxEllipses, FaUserFriends];
@@ -24,14 +25,14 @@ const Header = ({ setSelectedTab }) => {
 
           <ul className="d-flex flex-row justify-content-around mt-4 ulItem">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 onClick={() => {
-                  setSelectedTab("Home");
+                  // setSelectedTab("Home");
                 }}
               >
                 <FaHome />
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/">
