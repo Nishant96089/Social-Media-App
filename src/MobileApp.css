@@ -26,4 +26,25 @@
   .post-card {
     width: 100%;
   }
+
+  .side-name {
+    display: none;
+  }
+
+  .nav-item {
+    width: 3rem;
+  }
+
+  .mobile-sidebar {
+    padding: none;
+    height: 100%;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .app-logo {
+    margin-left: -0.5rem;
+  }
 }

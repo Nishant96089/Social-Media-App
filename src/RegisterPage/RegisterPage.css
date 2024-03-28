@@ -135,3 +135,9 @@
     background-color: #ffff;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .register-container {
+    background: white;
+  }
+}

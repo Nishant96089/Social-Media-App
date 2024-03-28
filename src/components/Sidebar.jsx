@@ -51,11 +51,11 @@ const Sidebar = ({}) => {
   ];
   return (
     <div
-      className={`d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary ${styles.sidebar} shadow p-3 mb-5 bg-body-tertiary rounded`}
+      className={`d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary ${styles.sidebar} shadow p-3 mb-5 bg-body-tertiary rounded mobile-sidebar`}
     >
-      <a
-        href="/"
-        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none shadow p-3 mb-5 bg-body-tertiary rounded"
+      <Link
+        to="/home"
+        className="app-logo d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
         <img
           width="60"
@@ -65,7 +65,7 @@ const Sidebar = ({}) => {
           className="bi pe-none me-4"
         />
         <span className="fs-4 fw-bold appName">DEV.connect</span>
-      </a>
+      </Link>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         {sideBtns.map((item) => (
@@ -93,7 +93,7 @@ const Sidebar = ({}) => {
                 width="16"
                 height="16"
               />
-              {item.name}
+              <span className="side-name">{item.name}</span>
             </Link>
           </li>
         ))}
@@ -113,7 +113,7 @@ const Sidebar = ({}) => {
             height="32"
             className="rounded-circle me-2"
           />
-          <strong>nishant.dev</strong>
+          <strong className="username">nishant.dev</strong>
         </a>
         <ul className="dropdown-menu text-small shadow">
           <li>
