@@ -62,7 +62,7 @@ const Postcard = ({ post }) => {
             <a
               href="http://www.facebook.com"
               target="_blank"
-              className="social-margin me-4"
+              className="social-margin me-4 social"
             >
               <div className="social-icon facebook">
                 <FaFacebook />
